@@ -1,4 +1,5 @@
 import logging
+import adf4351regs
 
 class ADF4351:
     def update(self):
@@ -49,8 +50,8 @@ class ADF4351:
         frac = round(mod * (realdiv - n))
         realfvco = self._fpfd * (n + frac / mod)
 
-        dint = DivInteger(n)
-        dfrac = DivFractional(frac)
+        dint = adf4351regs.DivInteger(n)
+        dfrac = adf4351regs.DivFractional(frac)
 
         self._log.info(f"n={n} frac={frac}, realfvco={realfvco}")
 

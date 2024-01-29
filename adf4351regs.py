@@ -67,7 +67,7 @@ class OutputDivider(RegisterField):
     LEN = 3
 
     def __init__(self, factor):
-        self._value = self.factor.value
+        self._value = factor.value
 
 class PowerDown(BitRegisterField):
     # Chipset power down

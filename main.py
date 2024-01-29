@@ -1,6 +1,8 @@
 import spidev
 import logging
 from argparse import ArgumentParser
+from adf4351 import ADF4351
+import adf4351regs as adr
 
 if __name__ == '__main__':
     p = ArgumentParser()
@@ -22,6 +24,6 @@ if __name__ == '__main__':
     pll = ADF4351(dev, fref=args.ref, fpfd=args.pfd)
     pll.set_vco_freq(args.output * (1 + args.referr * 1e-6))
     pll.set_fields(
-        OutputDivider(OutputDividerFactor(args.div))
+        adr.OutputDivider(adr.OutputDividerFactor(args.div))
     )
     pll.update()
