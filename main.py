@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import spidev
 import logging
 from argparse import ArgumentParser
